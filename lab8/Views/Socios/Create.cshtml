@@ -1,0 +1,11 @@
+@model Socio
+@{ ViewData["Title"] = "Nuevo socio"; }
+<h1>Nuevo socio</h1>
+<form asp-action="Create" method="post" class="col-lg-7 bg-white p-4 border rounded">
+    <div asp-validation-summary="ModelOnly" role="alert"></div>
+    <div class="mb-3"><label asp-for="DNI" class="form-label"></label><input asp-for="DNI" class="form-control" inputmode="numeric" /><span asp-validation-for="DNI"></span></div>
+    <div class="mb-3"><label asp-for="Nombre" class="form-label"></label><input asp-for="Nombre" class="form-control" /><span asp-validation-for="Nombre"></span></div>
+    <div class="mb-3"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" /><span asp-validation-for="Email"></span></div>
+    <button type="submit" class="btn btn-primary">Guardar</button><a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

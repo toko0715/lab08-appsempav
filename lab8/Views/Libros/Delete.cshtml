@@ -1,0 +1,10 @@
+@model Libro
+@{ ViewData["Title"] = "Eliminar libro"; }
+<h1>Eliminar libro</h1>
+<div class="alert alert-warning">¿Deseas desactivar <strong>@Model.Titulo</strong>? El registro se conserva en la base de datos.</div>
+<form asp-action="Delete" asp-route-id="@Model.LibroId" method="post">
+    <div asp-validation-summary="All" role="alert"></div>
+    <input type="hidden" name="id" value="@Model.LibroId" />
+    <button type="submit" class="btn btn-danger">Confirmar eliminación</button>
+    <a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a>
+</form>

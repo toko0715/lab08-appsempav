@@ -1,0 +1,16 @@
+@model IEnumerable<PrestamoReporte>
+@{ ViewData["Title"] = "Reporte de préstamos"; }
+<h1>Reporte de préstamos</h1>
+<form method="get" asp-action="Reporte" class="row g-3 mb-4">
+    <div class="col-sm-4"><label for="desde" class="form-label">Desde</label><input id="desde" name="desde" type="date" value="@ViewData["Desde"]" class="form-control" required /></div>
+    <div class="col-sm-4"><label for="hasta" class="form-label">Hasta</label><input id="hasta" name="hasta" type="date" value="@ViewData["Hasta"]" class="form-control" required /></div>
+    <div class="col-sm-4 d-flex align-items-end"><button class="btn btn-primary">Consultar</button></div>
+</form>
+<div asp-validation-summary="All" class="text-danger" role="alert"></div>
+@if (ViewData.ModelState.IsValid)
+{
+<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Préstamo</th><th>Socio</th><th>Libro</th><th>Fecha del préstamo</th><th>Fecha límite</th><th>Estado</th></tr></thead><tbody>
+@foreach (var item in Model) { <tr><td>@item.PrestamoId</td><td>@item.Socio</td><td>@item.Libro</td><td>@item.FechaPrestamo.ToString("dd/MM/yyyy")</td><td>@item.FechaLimite.ToString("dd/MM/yyyy")</td><td>@item.Estado</td></tr> }
+@if (!Model.Any()) { <tr><td colspan="6">No hay préstamos en el intervalo seleccionado.</td></tr> }
+</tbody></table></div>
+}

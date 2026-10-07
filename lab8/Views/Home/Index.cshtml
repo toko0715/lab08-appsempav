@@ -1,0 +1,11 @@
+@{ ViewData["Title"] = "Inicio"; }
+<div class="p-4 p-md-5 bg-white border rounded-3 mb-4">
+    <p class="text-primary fw-bold">LABORATORIO 08</p>
+    <h1>Gestión de biblioteca</h1>
+    <p class="lead">Administra los libros y socios, y consulta los préstamos por intervalo de fechas.</p>
+</div>
+<div class="row g-4">
+    <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h4">Libros</h2><p>Busca títulos, revisa sus autores y administra los ejemplares.</p><a class="btn btn-primary" asp-controller="Libros" asp-action="Index">Ver libros</a></div></div></div>
+    <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h4">Socios</h2><p>Consulta los socios activos y registra nuevos lectores.</p><a class="btn btn-primary" asp-controller="Socios" asp-action="Index">Ver socios</a></div></div></div>
+    <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h4">Préstamos</h2><p>Consulta los libros prestados, las fechas límite y su estado.</p><a class="btn btn-primary" asp-controller="Prestamos" asp-action="Reporte">Ver reporte</a></div></div></div>
+</div>

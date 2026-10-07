@@ -1,0 +1,10 @@
+@model Libro
+@{ ViewData["Title"] = "Nuevo libro"; }
+<h1>Nuevo libro</h1>
+<form asp-action="Create" asp-route-id="@Model.LibroId" method="post" class="col-lg-7 bg-white p-4 border rounded">
+
+    <partial name="_Formulario" model="Model" />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

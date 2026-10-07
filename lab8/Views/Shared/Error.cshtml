@@ -1,0 +1,6 @@
+@model ErrorViewModel
+@{ ViewData["Title"] = "Error"; }
+<h1>No se pudo completar la solicitud</h1>
+<p>Intenta nuevamente. Si el problema continúa, verifica la conexión a BibliotecaDB y la instalación de los procedimientos almacenados.</p>
+@if (Model.ShowRequestId) { <p class="text-muted">Identificador: <code>@Model.RequestId</code></p> }
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Volver al inicio</a>
